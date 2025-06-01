@@ -172,7 +172,7 @@ export default function AddBookModal({ visible, onClose, onBookAdded }: AddBookM
                     disabled={isSearching}
                   >
                     {isSearching ? (
-                      <ActivityIndicator size="small\" color="white" />
+                      <ActivityIndicator size="small" color="white" />
                     ) : (
                       <Search size={20} color="white" />
                     )}
@@ -268,7 +268,7 @@ export default function AddBookModal({ visible, onClose, onBookAdded }: AddBookM
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      <ActivityIndicator size="small\" color="white" />
+                      <ActivityIndicator size="small" color="white" />
                     ) : (
                       <>
                         <Book size={16} color="white" style={styles.addButtonIcon} />
