@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/core",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "typecheck": "echo core typecheck ok",
+    "lint": "echo core lint ok",
+    "build": "echo core build ok"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/ui",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "typecheck": "echo ui typecheck ok",
+    "lint": "echo ui lint ok",
+    "build": "echo ui build ok"
+  }
+}

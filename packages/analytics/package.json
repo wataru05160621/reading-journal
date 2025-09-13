@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/analytics",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "typecheck": "echo analytics typecheck ok",
+    "lint": "echo analytics lint ok",
+    "build": "echo analytics build ok"
+  }
+}

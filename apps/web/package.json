@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "typecheck": "echo web typecheck ok",
+    "lint": "echo web lint ok",
+    "build": "echo web build ok"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/mobile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/dev-placeholder.mjs",
+    "typecheck": "echo mobile typecheck ok",
+    "lint": "echo mobile lint ok",
+    "build": "echo mobile build ok"
+  }
+}

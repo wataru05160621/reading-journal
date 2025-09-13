@@ -1,0 +1,22 @@
+
+URL: https://github.com/wataru05160621/reading-journal
+アプリID/デベロッパーID
+(applicationId / developerId)
+
+1056768312252627367
+
+application_secret
+
+22cccbbad24f749492bd355250bb6c2ce25e882c
+
+アフィリエイトID
+(affiliateId)
+
+4bcfec6d.386c09d5.4bcfec6e.31905cc9
+
+
+コールバック許可ドメイン
+
+github.com
+
+ポリシーURL

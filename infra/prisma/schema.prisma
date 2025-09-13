@@ -1,0 +1,130 @@
+// TODO: Implement ER from docs/02
+// Models: User, Book, LibraryItem, Tag, LibraryItemTag, ReadingSession, TocItem
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ReadingStatus {
+  PLANNED
+  READING
+  COMPLETED
+  ABANDONED
+}
+
+model User {
+  id              String          @id @default(cuid())
+  email           String          @unique
+  displayName     String?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  libraryItems    LibraryItem[]
+  tags            Tag[]
+  readingSessions ReadingSession[]
+}
+
+model Book {
+  id           String    @id @default(cuid())
+  isbn10       String?   @db.VarChar(10)
+  isbn13       String?   @db.VarChar(13) @unique
+  title        String
+  authors      String?   // comma-separated
+  publisher    String?
+  publishedAt  DateTime?
+  pageCount    Int?
+  coverUrl     String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  libraryItems LibraryItem[]
+
+  @@index([title])
+}
+
+model LibraryItem {
+  id          String        @id @default(cuid())
+  userId      String
+  bookId      String
+  status      ReadingStatus @default(PLANNED)
+  startedAt   DateTime?
+  finishedAt  DateTime?
+  rating      Int?
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user        User          @relation(fields: [userId], references: [id])
+  book        Book          @relation(fields: [bookId], references: [id])
+  tags        LibraryItemTag[]
+  sessions    ReadingSession[]
+  tocItems    TocItem[]
+
+  @@unique([userId, bookId])
+  @@index([userId])
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String
+  color     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+  items     LibraryItemTag[]
+
+  @@unique([userId, name])
+  @@index([userId])
+}
+
+model LibraryItemTag {
+  libraryItemId String
+  tagId         String
+
+  libraryItem   LibraryItem @relation(fields: [libraryItemId], references: [id])
+  tag           Tag         @relation(fields: [tagId], references: [id])
+
+  @@id([libraryItemId, tagId])
+}
+
+model ReadingSession {
+  id            String    @id @default(cuid())
+  userId        String
+  libraryItemId String
+  startedAt     DateTime
+  endedAt       DateTime?
+  durationSec   Int?
+  notes         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  user          User        @relation(fields: [userId], references: [id])
+  libraryItem   LibraryItem @relation(fields: [libraryItemId], references: [id])
+
+  @@index([userId])
+  @@index([libraryItemId, startedAt])
+}
+
+model TocItem {
+  id            String     @id @default(cuid())
+  libraryItemId String
+  parentId      String?
+  level         Int        @default(1)
+  orderIndex    Int        @default(0)
+  title         String
+  page          Int?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  libraryItem   LibraryItem @relation(fields: [libraryItemId], references: [id])
+  parent        TocItem?    @relation("TocTree", fields: [parentId], references: [id])
+  children      TocItem[]   @relation("TocTree")
+
+  @@index([libraryItemId])
+  @@index([parentId])
+}

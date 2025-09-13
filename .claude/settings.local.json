@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "Read(/Users/shinzato/.claude/**)",
+      "Read(/Users/shinzato/.claude/**)",
+      "Read(/Users/shinzato/.claude/commands/**)",
+      "Read(/Users/shinzato/.claude/**)",
+      "Bash(claude-code mcp-list)",
+      "Bash(SuperClaude --version)",
+      "Bash(SuperClaude update)",
+      "Bash(pip install:*)",
+      "Bash(python3 -m pip install:*)",
+      "Bash(pipx upgrade:*)",
+      "Bash(SuperClaude install --full)",
+      "Bash(SuperClaude install:*)",
+      "Read(/Users/shinzato/.claude/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/SuperClaude/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/setup/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/setup/components/**)",
+      "Bash(python3:*)",
+      "Read(/Users/shinzato/.claude/temp_repo/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/setup/components/**)",
+      "Read(/Users/shinzato/.claude/temp_repo/**)",
+      "Read(/Users/shinzato/.claude/**)",
+      "Read(/Users/shinzato/.claude/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

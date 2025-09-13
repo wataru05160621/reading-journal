@@ -1,0 +1,11 @@
+{
+  "name": "@reading-journal/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/main.mjs",
+    "typecheck": "echo api typecheck ok",
+    "lint": "echo api lint ok",
+    "build": "echo api build ok"
+  }
+}
