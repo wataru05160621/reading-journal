@@ -1,0 +1,35 @@
+{
+  "isbn": "9784101010014",
+  "google": {
+    "title": "吾輩は猫である",
+    "authors": "夏目漱石",
+    "publisher": "",
+    "published": "1980",
+    "pages": "492",
+    "cover": ""
+  },
+  "openlibrary": {
+    "title": "Wagahai wa neko de aru",
+    "authors": "夏目漱石",
+    "publisher": "Shinchosha",
+    "published": "Dec 26, 2003",
+    "pages": "610",
+    "toc_count": 0,
+    "cover": "https://covers.openlibrary.org/b/id/13116321-L.jpg"
+  },
+  "rakuten": {
+    "title": "",
+    "authors": "",
+    "publisher": "",
+    "published": "",
+    "pages": "",
+    "cover": ""
+  },
+  "ndl": {
+    "title": "吾輩は猫である",
+    "authors": "",
+    "publisher": "",
+    "published": "",
+    "cover_exists": "yes"
+  }
+}

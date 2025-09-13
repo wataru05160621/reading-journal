@@ -1,0 +1,66 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "FmKGoAEACAAJ",
+      "etag": "gRU3bqtwYLw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/FmKGoAEACAAJ",
+      "volumeInfo": {
+        "title": "吾輩は猫である",
+        "authors": [
+          "夏目漱石"
+        ],
+        "publishedDate": "1980",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "4101010013"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9784101010014"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 492,
+        "printType": "BOOK",
+        "categories": [
+          "Cats"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "ja",
+        "previewLink": "http://books.google.co.jp/books?id=FmKGoAEACAAJ&dq=isbn:9784101010014&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.co.jp/books?id=FmKGoAEACAAJ&dq=isbn:9784101010014&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/%E5%90%BE%E8%BC%A9%E3%81%AF%E7%8C%AB%E3%81%A7%E3%81%82%E3%82%8B.html?hl=&id=FmKGoAEACAAJ"
+      },
+      "saleInfo": {
+        "country": "JP",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "JP",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=FmKGoAEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}
