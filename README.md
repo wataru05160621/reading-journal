@@ -11,6 +11,8 @@ This repo contains early scaffolding for a reading-journal app.
 
 ## Dev Commands
 - `npm run dev:api` — start API at http://localhost:3000
+- API endpoints:
+  - `GET /books/search?q=キーワード` または `GET /books/search?isbn=ISBN`（Google/OpenLibrary統合）
 - `npm run dev:web` — start web at http://localhost:5173
 - `npm run dev:mobile` — run mobile placeholder
 - `npm run typecheck && npm run lint && npm run build` — aggregate tasks per workspace
