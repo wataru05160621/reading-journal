@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node src/main.mjs",
+    "test": "node --test",
     "typecheck": "echo api typecheck ok",
     "lint": "echo api lint ok",
     "build": "echo api build ok"

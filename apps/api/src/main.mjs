@@ -1,13 +1,13 @@
 import http from 'node:http';
 import { URL } from 'node:url';
 import { searchBooks } from './search.mjs';
+import { ok, notFound, serverError } from './http.mjs';
 
 const port = Number(process.env.PORT || 3000);
 
 const server = http.createServer((req, res) => {
   if (req.url === '/' && req.method === 'GET') {
-    res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' });
-    res.end(JSON.stringify({ ok: true, name: 'reading-journal api', version: 1 }));
+    ok(res, { ok: true, name: 'reading-journal api', version: 1 });
     return;
   }
   if (req.method === 'GET' && req.url?.startsWith('/books/search')) {
@@ -16,17 +16,14 @@ const server = http.createServer((req, res) => {
       const q = url.searchParams.get('q') ?? undefined;
       const isbn = url.searchParams.get('isbn') ?? undefined;
       const results = await searchBooks({ q, isbn });
-      res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ items: results }));
+      ok(res, { items: results });
       return;
     } catch (e) {
-      res.writeHead(500, { 'content-type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ error: 'Search failed' }));
+      serverError(res, 'Search failed');
       return;
     }
   }
-  res.writeHead(404, { 'content-type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify({ error: 'Not Found' }));
+  notFound(res);
 });
 
 server.listen(port, () => {
