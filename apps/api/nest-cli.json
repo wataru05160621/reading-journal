@@ -4,6 +4,6 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": false,
-    "tsConfigPath": "apps/api/tsconfig.json"
+    "tsConfigPath": "tsconfig.json"
   }
 }

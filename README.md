@@ -23,3 +23,7 @@ This repo contains early scaffolding for a reading-journal app.
 ## Next Steps
 - Implement Prisma models (see `docs/02`), then CRUD (VS tasks).
 - Replace stubs with proper frameworks (NestJS/Next.js/Expo) as per `CODEX.md` and `docs/06_Codex_タスク指示テンプレ.md`.
+- NestJS API (apps/api) development
+  - 依存インストール: `cd apps/api && npm i`
+  - 起動: `npm run start:dev`
+  - もし tsconfig が見つからないエラーが出た場合は、`apps/api/nest-cli.json` の `tsConfigPath` が `tsconfig.json` になっているか確認してください（本リポジトリでは修正済み）。
