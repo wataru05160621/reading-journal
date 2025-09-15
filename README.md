@@ -13,6 +13,12 @@ This repo contains early scaffolding for a reading-journal app.
 - `npm run dev:api` — start API at http://localhost:3000
 - API endpoints:
   - `GET /books/search?q=キーワード` または `GET /books/search?isbn=ISBN`（Google/OpenLibrary統合）
+  - `GET /library-items`（要 `x-user-id`）
+  - `POST /library-items`（`bookId` 必須）
+  - `GET /library-items/:id` / `PATCH /library-items/:id` / `DELETE /library-items/:id`
+  - `GET /reading-sessions?libraryItemId=...` / `POST /reading-sessions` / `PATCH /reading-sessions/:id` / `DELETE /reading-sessions/:id`
+  - `GET /tags` / `POST /tags` / `PATCH /tags/:id` / `DELETE /tags/:id`
+  - `POST /library-items/:id/tags { tagId }` / `DELETE /library-items/:id/tags/:tagId`
 - `npm run dev:web` — start web at http://localhost:5173
 - `npm run dev:mobile` — run mobile placeholder
 - `npm run typecheck && npm run lint && npm run build` — aggregate tasks per workspace
